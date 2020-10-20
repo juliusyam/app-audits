@@ -23,7 +23,7 @@ for (i = 0; i < BG_MODAL_SELECTED.length; i++) {
 
 var x = document.getElementById('contact_form');
 var createForm = document.createElement('form'); // Create New Element Form
-createForm.setAttribute("action", "//formspree.io/jyyam1999@gmail.com"); // Setting Action Attribute on Form
+createForm.setAttribute("action", "https://formspree.io/jyyam1999@gmail.com"); // Setting Action Attribute on Form
 createForm.setAttribute("method", "post"); // Setting Method Attribute on Form
 createForm.setAttribute("enctype", "text/plain");
 x.appendChild(createForm);
@@ -43,6 +43,7 @@ createForm.appendChild(lineBreak);
 // createForm.appendChild(nameLabel);
 
 var nameElement = document.createElement('input'); // Create Input Field for Name
+nameElement.setAttribute("id", "name");
 nameElement.setAttribute("type", "text");
 nameElement.setAttribute("placeholder", "Name");
 nameElement.setAttribute("name", "name");
@@ -56,6 +57,7 @@ createForm.appendChild(lineBreak);
 // createForm.appendChild(emailLabel);
 
 var emailElement = document.createElement('input'); // Create Input Field for E-mail
+emailElement.setAttribute("id", "email");
 emailElement.setAttribute("type", "text");
 emailElement.setAttribute("placeholder", "Email Address");
 emailElement.setAttribute("name", "email");
@@ -69,6 +71,7 @@ createForm.appendChild(emailBreak);
 // createForm.appendChild(phoneLabel);
 
 var phoneElement = document.createElement('input');
+phoneElement.setAttribute("id", "phone");
 phoneElement.setAttribute("type", "text");
 phoneElement.setAttribute("placeholder", "Phone");
 phoneElement.setAttribute("name", "phone");
@@ -78,13 +81,15 @@ var phoneBreak = document.createElement('br');
 createForm.appendChild(phoneBreak);
 
 var checkboxLabel = document.createElement('h3'); //Create Label for Checkbox Field
-checkboxLabel.innerHTML = "Category(s) of services you wish to know  : "
+checkboxLabel.innerHTML = "Service(s) you would like to discuss: "
 createForm.appendChild(checkboxLabel);
 
 var checkboxElementLOTL = document.createElement('input'); //Lay of the Land Checkbox
-checkboxElementLOTL.className = "checkboxElementLOTL";
+checkboxElementLOTL.className = "checkboxElementLOTL  checks";
+checkboxElementLOTL.setAttribute("id", "checkboxElementLOTL");
 checkboxElementLOTL.setAttribute("type", "checkbox");
-checkboxElementLOTL.setAttribute("name", "lay-of-the-land");
+checkboxElementLOTL.setAttribute("name", "typeOfService");
+checkboxElementLOTL.setAttribute("value", "Lay of the Land");
 createForm.appendChild(checkboxElementLOTL);
 
 var checkboxLabelLOTL = document.createElement('label');
@@ -100,9 +105,11 @@ var checkboxElementAndLabelLOTL = document.querySelectorAll('.checkboxElementLOT
 // createForm.appendChild(wrapper);
 
 var checkboxElementDD = document.createElement('input'); //Due Diligence Checkbox
-checkboxElementDD.className = "checkboxElementDD";
+checkboxElementDD.className = "checkboxElementDD checks";
+checkboxElementDD.setAttribute("id", "checkboxElementDD");
 checkboxElementDD.setAttribute("type", "checkbox");
-checkboxElementDD.setAttribute("name", "due-diligence");
+checkboxElementDD.setAttribute("name", "typeOfService");
+checkboxElementDD.setAttribute("value", "Due Diligence");
 createForm.appendChild(checkboxElementDD);
 
 var checkboxLabelDD = document.createElement('label');
@@ -118,9 +125,11 @@ var checkboxElementAndLabelDD = document.querySelectorAll('.checkboxElementDD, .
 // createForm.appendChild(wrapper);
 
 var checkboxElementDR = document.createElement('input'); //Dispute Resolution Checkbox
-checkboxElementDR.className = "checkboxElementDR";
+checkboxElementDR.className = "checkboxElementDR checks";
+checkboxElementDR.setAttribute("id", "checkboxElementDR");
 checkboxElementDR.setAttribute("type", "checkbox");
-checkboxElementDR.setAttribute("name", "dispute-resolution");
+checkboxElementDR.setAttribute("name", "typeOfService");
+checkboxElementDR.setAttribute("value", "Dispute Resolution");
 createForm.appendChild(checkboxElementDR);
 
 var checkboxLabelDR = document.createElement('label');
@@ -137,15 +146,18 @@ createForm.appendChild(checkboxBreak);
 // messageLabel.innerHTML = "Your Message : ";
 // createForm.appendChild(messageLabel);
 
-var texareaElement = document.createElement('textarea');
-texareaElement.setAttribute("placeholder", "Message");
-texareaElement.setAttribute("name", "message");
-createForm.appendChild(texareaElement);
+var textareaElement = document.createElement('textarea');
+textareaElement.setAttribute("id", "message");
+textareaElement.setAttribute("placeholder", "Message");
+textareaElement.setAttribute("name", "message");
+createForm.appendChild(textareaElement);
 
 var messageBreak = document.createElement('br');
 createForm.appendChild(messageBreak);
 
 var submitElement = document.createElement('input'); // Append Submit Button
+submitElement.setAttribute("id", "submit");
+submitElement.setAttribute("onclick", "getDateAndValue();return false");
 submitElement.setAttribute("type", "submit");
 submitElement.setAttribute("name", "submit");
 submitElement.setAttribute("value", "Submit");
@@ -157,3 +169,52 @@ $(document).ready(function() {
     $(checkboxElementAndLabelDR).wrapAll('<div class="container-div"></div>');
     $('.container-div').wrapAll('<div class="checkbox-div"></div>');
 });
+
+//get and set the Date and Value of checkBox
+var services = '';
+var date = '';
+var dateInNiceFormat = '';
+
+function getDateAndValue() {
+
+    services = Array.prototype.map.call(document.querySelectorAll("input[name=typeOfService]:checked"), function(each) {
+         return each.value; 
+    });
+
+    date = new Date();
+    dateInNiceFormat = date.toString();
+
+    console.log(services);
+    console.log(dateInNiceFormat);
+}
+
+
+
+//Form make JSON
+let forms = [];
+
+
+const addForm = (ev)=>{
+    ev.preventDefault();
+    let form = {
+        date: dateInNiceFormat,
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        // service: ["Lay of the land: " + document.getElementById('checkboxElementLOTL').checked, 
+        //     "Due Diligence: " + document.getElementById('checkboxElementDD').checked,
+        //     "Dispute Resolution: " + document.getElementById('checkboxElementDR').checked],
+        services: services,
+        message: document.getElementById('message').value
+    }
+    forms.push(form);
+    document.querySelector('form').reset();
+
+    console.warn('added', {forms} );
+
+    localStorage.setItem('FormSubmission', JSON.stringify(forms) );
+};
+
+document.addEventListener('DOMContentLoaded', ()=>{
+    document.getElementById('submit').addEventListener('click', addForm);
+});
+
