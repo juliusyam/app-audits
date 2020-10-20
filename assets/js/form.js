@@ -26,6 +26,7 @@ var createForm = document.createElement('form'); // Create New Element Form
 createForm.setAttribute("action", "https://formspree.io/jyyam1999@gmail.com"); // Setting Action Attribute on Form
 createForm.setAttribute("method", "post"); // Setting Method Attribute on Form
 createForm.setAttribute("enctype", "text/plain");
+createForm.setAttribute("name", "submission-form");
 x.appendChild(createForm);
 
 var heading = document.createElement('h2'); // Heading of Form
@@ -47,6 +48,7 @@ nameElement.setAttribute("id", "name");
 nameElement.setAttribute("type", "text");
 nameElement.setAttribute("placeholder", "Name");
 nameElement.setAttribute("name", "name");
+nameElement.setAttribute("required", "");
 createForm.appendChild(nameElement);
 
 var lineBreak = document.createElement('br');
@@ -186,6 +188,16 @@ function getDateAndValue() {
 
     console.log(services);
     console.log(dateInNiceFormat);
+    //validateForm();
+}
+
+function validateForm() {
+    var nameInput = document.getElementById('name').value;
+    var emailInput = document.getElementById('email').value;
+    if (nameInput == "" || emailInput == "") {
+        alert("Name and Email are required");
+        
+    }
 }
 
 
@@ -193,26 +205,38 @@ function getDateAndValue() {
 //Form make JSON
 let forms = [];
 
-
 const addForm = (ev)=>{
     ev.preventDefault();
     let form = {
         date: dateInNiceFormat,
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
-        // service: ["Lay of the land: " + document.getElementById('checkboxElementLOTL').checked, 
-        //     "Due Diligence: " + document.getElementById('checkboxElementDD').checked,
-        //     "Dispute Resolution: " + document.getElementById('checkboxElementDR').checked],
         services: services,
         message: document.getElementById('message').value
     }
     forms.push(form);
     document.querySelector('form').reset();
 
-    console.warn('added', {forms} );
+    //console.warn('added', {forms} );
 
-    localStorage.setItem('FormSubmission', JSON.stringify(forms) );
+    localStorage.setItem('FormSubmission', JSON.stringify(forms));
+    
 };
+
+// if (forms != []) {
+//     alert("Form Submitted");
+
+//     //Close Form
+//     if (document.querySelector('form').reset()) {
+//         var SUBMIT_SELECTED = document.getElementById('submit');
+//         SUBMIT_SELECTED.addEventListener('click', function() {
+//             BG_MODAL.forEach(function(BG_MODAL) {
+//                 BG_MODAL.style.display = 'none';
+//             });
+//         });
+//     }
+// }
+
 
 document.addEventListener('DOMContentLoaded', ()=>{
     document.getElementById('submit').addEventListener('click', addForm);
