@@ -23,7 +23,7 @@ for (i = 0; i < BG_MODAL_SELECTED.length; i++) {
 
 var x = document.getElementById('contact_form');
 var createForm = document.createElement('form'); // Create New Element Form
-createForm.setAttribute("action", "mailto:jyyam1999@gmail.com"); // Setting Action Attribute on Form
+createForm.setAttribute("action", "//formspree.io/jyyam1999@gmail.com"); // Setting Action Attribute on Form
 createForm.setAttribute("method", "post"); // Setting Method Attribute on Form
 createForm.setAttribute("enctype", "text/plain");
 x.appendChild(createForm);
