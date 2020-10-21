@@ -538,6 +538,10 @@ form h2 {
     align-items: flex-start;
 }
 
+input:required {
+    background-color: red;
+}
+
 input[type="text"] {
     width: 100%;
     height: 50px;

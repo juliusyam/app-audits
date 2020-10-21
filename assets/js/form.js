@@ -23,6 +23,7 @@ for (i = 0; i < BG_MODAL_SELECTED.length; i++) {
 
 var x = document.getElementById('contact_form');
 var createForm = document.createElement('form'); // Create New Element Form
+createForm.className = "form";
 createForm.setAttribute("action", "https://formspree.io/jyyam1999@gmail.com"); // Setting Action Attribute on Form
 createForm.setAttribute("method", "post"); // Setting Method Attribute on Form
 createForm.setAttribute("enctype", "text/plain");
@@ -48,7 +49,6 @@ nameElement.setAttribute("id", "name");
 nameElement.setAttribute("type", "text");
 nameElement.setAttribute("placeholder", "Name");
 nameElement.setAttribute("name", "name");
-nameElement.setAttribute("required", "");
 createForm.appendChild(nameElement);
 
 var lineBreak = document.createElement('br');
@@ -87,7 +87,7 @@ checkboxLabel.innerHTML = "Service(s) you would like to discuss: "
 createForm.appendChild(checkboxLabel);
 
 var checkboxElementLOTL = document.createElement('input'); //Lay of the Land Checkbox
-checkboxElementLOTL.className = "checkboxElementLOTL  checks";
+checkboxElementLOTL.className = "checkboxElementLOTL";
 checkboxElementLOTL.setAttribute("id", "checkboxElementLOTL");
 checkboxElementLOTL.setAttribute("type", "checkbox");
 checkboxElementLOTL.setAttribute("name", "typeOfService");
@@ -107,7 +107,7 @@ var checkboxElementAndLabelLOTL = document.querySelectorAll('.checkboxElementLOT
 // createForm.appendChild(wrapper);
 
 var checkboxElementDD = document.createElement('input'); //Due Diligence Checkbox
-checkboxElementDD.className = "checkboxElementDD checks";
+checkboxElementDD.className = "checkboxElementDD";
 checkboxElementDD.setAttribute("id", "checkboxElementDD");
 checkboxElementDD.setAttribute("type", "checkbox");
 checkboxElementDD.setAttribute("name", "typeOfService");
@@ -127,7 +127,7 @@ var checkboxElementAndLabelDD = document.querySelectorAll('.checkboxElementDD, .
 // createForm.appendChild(wrapper);
 
 var checkboxElementDR = document.createElement('input'); //Dispute Resolution Checkbox
-checkboxElementDR.className = "checkboxElementDR checks";
+checkboxElementDR.className = "checkboxElementDR";
 checkboxElementDR.setAttribute("id", "checkboxElementDR");
 checkboxElementDR.setAttribute("type", "checkbox");
 checkboxElementDR.setAttribute("name", "typeOfService");
@@ -191,16 +191,56 @@ function getDateAndValue() {
     //validateForm();
 }
 
-function validateForm() {
-    var nameInput = document.getElementById('name').value;
-    var emailInput = document.getElementById('email').value;
-    if (nameInput == "" || emailInput == "") {
-        alert("Name and Email are required");
+// function validateForm() {
+//     var nameInput = document.getElementById('name').value;
+//     var emailInput = document.getElementById('email').value;
+//     if (nameInput == "" || emailInput == "") {
+//         alert("Name and Email are required");
         
-    }
-}
+//     }
+// }
 
+// function validateEmail(email) {
+//     // const re = /^([a-z\d\.-]+)@)([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/;
+//     const re= /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+//     return re.test(email);
+// }
 
+// function validate() {
+//     const $result = $("#result");
+//     const email = $("#email").val();
+//     $result.text("");
+
+//     if (validateEmail(email)) {
+//         $result.text(email + " is valid :)");
+//         $result.css("color", "green");
+//     } else {
+//         $result.text(email + " is not valid :(");
+//         $result.css("color", "red");
+//     }
+//     return false;
+// }
+
+// $("#submit").on("click", validate);
+
+$(function() {
+    'use strict';
+
+    var regex = {
+        email: /^([a-z\d\.-]+)@)([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/,
+    };
+
+    $.each($('#email'), function() {
+        $(this).on('focusout', function() {
+            if (!regex[$(this).attr('name')].test($(this).val())) {
+                $(this).addClass('error')
+            } else {
+                $(this).removeClass('error');
+            }
+        });
+    });
+
+});
 
 //Form make JSON
 let forms = [];
