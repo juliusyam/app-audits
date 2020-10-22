@@ -1,16 +1,16 @@
 @font-face {
     font-family: 'Montserrat';
-    src: url(/app-audits/assets/font/Montserrat-Medium.ttf);
+    src: url(../font/Montserrat-Medium.ttf);
 }
 
 @font-face {
     font-family: 'Montserrat-Bold';
-    src: url(/app-audits/assets/font/Montserrat-Bold.ttf);
+    src: url(../font/Montserrat-Bold.ttf);
 }
 
 @font-face {
     font-family: 'Montserrat-Light';
-    src: url(/app-audits/assets/font/Montserrat-Light.ttf);
+    src: url(../font/Montserrat-Light.ttf);
 }
 
 html, body {
@@ -523,7 +523,6 @@ ul {
     top: 0;
     left: 0;
     width: 100%;
-    /*background-image: linear-gradient(-45deg,rgba(121, 228, 232, 0.9), rgba(232, 121, 208, 0.9));*/
     background-image: linear-gradient(-45deg,rgba(54, 123, 227, 0.95), rgba(227, 54, 87, 0.95));
     min-height: 100vh;
     display: none;
