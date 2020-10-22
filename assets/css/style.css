@@ -324,14 +324,9 @@ ul {
     background-attachment: fixed;
 }
 
-.bar-style-1 {
-    background: white;
-}
+.bar-style-1 {background: white;}
+.bar-style-2 {background: #fbfbfb;}
 
-.bar-style-2 {background: #f7f7f7;}
-/* .bar-style-3 {background-image: url(../img/lay-of-the-land-header-white.jpg);}
-.bar-style-4 {background-image: url(../img/due-diligence-header-white.jpg);}
-.bar-style-5 {background-image: url(../img/dispute-resolution-header-white.jpg);} */
 
 .bar-flex {
     display: flex;

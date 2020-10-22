@@ -226,11 +226,19 @@ function validateNameAndEmail() {
         console.log("true true");
         addForm(event);
         alert("Form successfully submitted");
+
+        BG_MODAL.forEach(function(BG_MODAL) {
+            BG_MODAL.style.display = 'none';
+        });
         return;
     } else {
         console.log("die pig die");
         alert("Please fill valid info");
         document.querySelector('form').reset();
+        
+        BG_MODAL.forEach(function(BG_MODAL) {
+            BG_MODAL.style.display = 'flex';
+        });
         return;
     }
 };
@@ -252,13 +260,6 @@ function addForm(event) {
 
     localStorage.setItem('FormSubmission', JSON.stringify(forms));
 };
-    
-var SUBMIT_SELECTED = document.getElementById('submit');
 
-SUBMIT_SELECTED.addEventListener('click', function() {
-    BG_MODAL.forEach(function(BG_MODAL) {
-        BG_MODAL.style.display = 'none';
-    });
-});
 
 
