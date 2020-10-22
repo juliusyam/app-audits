@@ -176,7 +176,6 @@ $(document).ready(function() {
 var services = '';
 var date = '';
 var dateInNiceFormat = '';
-var email = document.getElementById('email').value;
 
 document.getElementById('submit').addEventListener('click', function() {
     
@@ -190,27 +189,57 @@ document.getElementById('submit').addEventListener('click', function() {
     console.log(services);
     console.log(dateInNiceFormat);
 
-    validateEmail(document.submissionForm.email);
+    validateNameAndEmail();
 })
 
-function validateEmail(inputText) {
-    //const re = /^([a-z\d\.-]+)@)([a-z\d-]+)\.([a-zA-Z]{2,8})(\.[a-z]{2,8})?$/;
-    var emailFormat = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (inputText.value.match(emailFormat)) {
-        alert("Valid email address");
-        return true;
+// function validateEmail(inputText) {
+//     //const re = /^([a-z\d\.-]+)@)([a-z\d-]+)\.([a-zA-Z]{2,8})(\.[a-z]{2,8})?$/;
+//     var emailFormat = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+//     if (inputText.value.match(emailFormat)) {
+//         alert("Valid email address");
+//         document.submissionForm.email.focus();
+//         return true;
+//     } else {
+//         alert("Invalid email address");
+//         document.submissionForm.email.focus();
+//         return false;
+//     }
+// };
+
+function validateNameAndEmail() {
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+
+    var strName = name;
+    var strEmail = email;
+
+    strName.prototype = function(each) {
+        return each.length;
+    };
+
+    const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    
+    console.log(emailRegex.test(strEmail));
+    console.log(strName.length);
+
+    if(emailRegex.test(strEmail) && strName.length >= 3) {
+        console.log("true true");
+        addForm(event);
+        alert("Form successfully submitted");
+        return;
     } else {
-        alert("Invalid email address");
-        document.submissionForm.email.focus();
-        return false;
+        console.log("die pig die");
+        alert("Please fill valid info");
+        document.querySelector('form').reset();
+        return;
     }
 };
 
 //Form make JSON
 let forms = [];
 
-const addForm = (ev) => {
-    ev.preventDefault();
+function addForm(event) {
+    event.preventDefault();
     let form = {
         date: dateInNiceFormat,
         name: document.getElementById('name').value,
@@ -221,26 +250,15 @@ const addForm = (ev) => {
     forms.push(form);
     document.querySelector('form').reset();
 
-    //console.warn('added', {forms} );
-    if (inputText.value.match(emailFormat)) {
-        localStorage.setItem('FormSubmission', JSON.stringify(forms));
-    } else {
-        console.log("not sent");
-    }
+    localStorage.setItem('FormSubmission', JSON.stringify(forms));
 };
-
-document.addEventListener('DOMContentLoaded', ()=>{
-    document.getElementById('submit').addEventListener('click', addForm);
     
-    var SUBMIT_SELECTED = document.getElementById('submit');
-    //Close Form
-    //if statement not working
-    //if (document.querySelector('form').reset() == true) {
-        SUBMIT_SELECTED.addEventListener('click', function() {
-            BG_MODAL.forEach(function(BG_MODAL) {
-                BG_MODAL.style.display = 'none';
-            });
-        });
-    //};
+var SUBMIT_SELECTED = document.getElementById('submit');
+
+SUBMIT_SELECTED.addEventListener('click', function() {
+    BG_MODAL.forEach(function(BG_MODAL) {
+        BG_MODAL.style.display = 'none';
+    });
 });
+
 
