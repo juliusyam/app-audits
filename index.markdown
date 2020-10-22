@@ -15,6 +15,18 @@ description1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel 
 title2: About Us
 description2: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel justo sodales, posuere arcu porttitor, scelerisque leo. Suspendisse libero ipsum, luctus lacinia metus sit amet, semper maximus purus. Nullam rutrum tempor massa, sit amet euismod dui pellentesque et. Donec vitae finibus metus. Suspendisse auctor tortor est, et elementum arcu pulvinar tincidunt. Etiam varius eget lacus ut finibus. Fusce enim enim, tempus at eleifend vitae, varius a mauris. Mauris eu purus a ex sagittis imperdiet et sit amet est.
 
+# Bar 2
+title3: Lay of the Land
+description3: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel justo sodales, posuere arcu porttitor, scelerisque leo. Suspendisse libero ipsum, luctus lacinia metus sit amet, semper maximus purus. Nullam rutrum tempor massa, sit amet euismod dui pellentesque et. Donec vitae finibus metus. Suspendisse auctor tortor est, et elementum arcu pulvinar tincidunt. Etiam varius eget lacus ut finibus. Fusce enim enim, tempus at eleifend vitae, varius a mauris. Mauris eu purus a ex sagittis imperdiet et sit amet est.
+
+# Bar 2
+title4: Due Diligence
+description4: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel justo sodales, posuere arcu porttitor, scelerisque leo. Suspendisse libero ipsum, luctus lacinia metus sit amet, semper maximus purus. Nullam rutrum tempor massa, sit amet euismod dui pellentesque et. Donec vitae finibus metus. Suspendisse auctor tortor est, et elementum arcu pulvinar tincidunt. Etiam varius eget lacus ut finibus. Fusce enim enim, tempus at eleifend vitae, varius a mauris. Mauris eu purus a ex sagittis imperdiet et sit amet est.
+
+# Bar 2
+title5: Dispute Resolution
+description5: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel justo sodales, posuere arcu porttitor, scelerisque leo. Suspendisse libero ipsum, luctus lacinia metus sit amet, semper maximus purus. Nullam rutrum tempor massa, sit amet euismod dui pellentesque et. Donec vitae finibus metus. Suspendisse auctor tortor est, et elementum arcu pulvinar tincidunt. Etiam varius eget lacus ut finibus. Fusce enim enim, tempus at eleifend vitae, varius a mauris. Mauris eu purus a ex sagittis imperdiet et sit amet est.
+
 ---
 
 <style>
@@ -123,12 +135,12 @@ description2: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel 
 <section class="home-page-triangle"></section>
 
 <section class="home-page-title">
-    <h1>We audit any programmes of any size.</h1>
+    <h1>{{ page.title }}</h1>
 </section>
 
 <section class="home-page-content">
     <img src="/app-audits/assets/img/logo-white.png">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel justo sodales, posuere arcu porttitor</p>
+    <p>App Audits offer a range of 3rd cyber inspection, including check quality, due diligence and dispute resolution.</p>
 </section>
 
 {% include indexdescription.html %} 
