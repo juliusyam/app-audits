@@ -43,16 +43,24 @@ button:focus {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    min-height: 100px;
-    padding: 0 100px;
-    background-color: none;
     position: sticky;
     transition: 0.5s ease all;
+    background-color: rgba(23,23,23,0);
+    padding: 40px 100px;
 }
 
-.navigation nav:hover {
-    background-color: rgba(23,23,23,0.8);
+.navigation nav.scroll {
+    background-color: rgba(23,23,23,1);
+    padding: 10px 100px;
 }
+
+/* .navigation nav.scroll {
+    background-color: rgba(23,23,23,0.8);
+} */
+
+/* .navigation nav:hover {
+    background-color: rgba(23,23,23,0.8);
+} */
 
 .navigation {
     margin: 0 auto 0 auto;
@@ -93,6 +101,11 @@ nav li a {
     margin: 0 20px;
 }
 
+nav li a.scroll {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+}
+
 button {
     cursor: pointer;
     outline: none;
@@ -124,6 +137,12 @@ ul {
 
 .nav-text img {
     width: 50px;
+    height: auto;
+    transition: 0.5s ease all;
+}
+
+.nav-text img.scroll {
+    width: 30px;
     height: auto;
 }
 
@@ -326,8 +345,7 @@ ul {
 
 @media (max-width: 1000px) and (orientation: portrait) {
     .navigation nav {
-        padding: 0 20px;
-        background-color: #171717;
+        padding: 0 20px !important;
         min-height: 60px;
     }
     .nav-text img {
@@ -358,8 +376,7 @@ ul {
 
 @media (max-width: 700px) {
     .navigation nav {
-        padding: 0 20px;
-        background-color: #171717;
+        padding: 0 20px !important;
         min-height: 60px;
     }
     .nav-text img {

@@ -63,8 +63,25 @@
         </p>
         <p>York Dev Studio, 20 St. Saviourgate, York, North Yorkshire, YO1 8NN</p>
     </section>
+  
+    <script>
 
+        window.onscroll = () => {
+            const nav = document.querySelectorAll('.navigation nav');
+            const navImg = document.querySelectorAll('.nav-text img');
 
+            for (i = 0; i < nav.length; i++) {
+                if (this.scrollY <= 400) {
+                    nav[i].className = '';
+                    navImg[i].className = '';
+                } else {
+                    nav[i].className = 'scroll';
+                    navImg[i].className = 'scroll';
+                }
+            };
+        };
+
+    </script>
     <script src="{{ site.baseurl }}/assets/js/form.js"></script>
     <script src="{{ site.baseurl }}/assets/js/navigation-bar.js"></script>
 </body>
