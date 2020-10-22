@@ -24,10 +24,10 @@ for (i = 0; i < BG_MODAL_SELECTED.length; i++) {
 var x = document.getElementById('contact_form');
 var createForm = document.createElement('form'); // Create New Element Form
 createForm.className = "form";
-createForm.setAttribute("action", "https://formspree.io/jyyam1999@gmail.com"); // Setting Action Attribute on Form
+createForm.setAttribute("action", "mailto:jyyam1999@gmail.com"); // Setting Action Attribute on Form
 createForm.setAttribute("method", "post"); // Setting Method Attribute on Form
 createForm.setAttribute("enctype", "text/plain");
-createForm.setAttribute("name", "submission-form");
+createForm.setAttribute("name", "submissionForm");
 x.appendChild(createForm);
 
 var heading = document.createElement('h2'); // Heading of Form
@@ -159,7 +159,7 @@ createForm.appendChild(messageBreak);
 
 var submitElement = document.createElement('input'); // Append Submit Button
 submitElement.setAttribute("id", "submit");
-submitElement.setAttribute("onclick", "getDateAndValue();return false");
+//submitElement.setAttribute("onclick", "getDateAndValue();return false");
 submitElement.setAttribute("type", "submit");
 submitElement.setAttribute("name", "submit");
 submitElement.setAttribute("value", "Submit");
@@ -176,11 +176,12 @@ $(document).ready(function() {
 var services = '';
 var date = '';
 var dateInNiceFormat = '';
+var email = document.getElementById('email').value;
 
-function getDateAndValue() {
-
+document.getElementById('submit').addEventListener('click', function() {
+    
     services = Array.prototype.map.call(document.querySelectorAll("input[name=typeOfService]:checked"), function(each) {
-         return each.value; 
+        return each.value; 
     });
 
     date = new Date();
@@ -188,64 +189,27 @@ function getDateAndValue() {
 
     console.log(services);
     console.log(dateInNiceFormat);
-    //validateForm();
-}
 
-// function validateForm() {
-//     var nameInput = document.getElementById('name').value;
-//     var emailInput = document.getElementById('email').value;
-//     if (nameInput == "" || emailInput == "") {
-//         alert("Name and Email are required");
-        
-//     }
-// }
+    validateEmail(document.submissionForm.email);
+})
 
-// function validateEmail(email) {
-//     // const re = /^([a-z\d\.-]+)@)([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/;
-//     const re= /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-//     return re.test(email);
-// }
-
-// function validate() {
-//     const $result = $("#result");
-//     const email = $("#email").val();
-//     $result.text("");
-
-//     if (validateEmail(email)) {
-//         $result.text(email + " is valid :)");
-//         $result.css("color", "green");
-//     } else {
-//         $result.text(email + " is not valid :(");
-//         $result.css("color", "red");
-//     }
-//     return false;
-// }
-
-// $("#submit").on("click", validate);
-
-$(function() {
-    'use strict';
-
-    var regex = {
-        email: /^([a-z\d\.-]+)@)([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/,
-    };
-
-    $.each($('#email'), function() {
-        $(this).on('focusout', function() {
-            if (!regex[$(this).attr('name')].test($(this).val())) {
-                $(this).addClass('error')
-            } else {
-                $(this).removeClass('error');
-            }
-        });
-    });
-
-});
+function validateEmail(inputText) {
+    //const re = /^([a-z\d\.-]+)@)([a-z\d-]+)\.([a-zA-Z]{2,8})(\.[a-z]{2,8})?$/;
+    var emailFormat = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (inputText.value.match(emailFormat)) {
+        alert("Valid email address");
+        return true;
+    } else {
+        alert("Invalid email address");
+        document.submissionForm.email.focus();
+        return false;
+    }
+};
 
 //Form make JSON
 let forms = [];
 
-const addForm = (ev)=>{
+const addForm = (ev) => {
     ev.preventDefault();
     let form = {
         date: dateInNiceFormat,
@@ -258,27 +222,25 @@ const addForm = (ev)=>{
     document.querySelector('form').reset();
 
     //console.warn('added', {forms} );
-
-    localStorage.setItem('FormSubmission', JSON.stringify(forms));
-    
+    if (inputText.value.match(emailFormat)) {
+        localStorage.setItem('FormSubmission', JSON.stringify(forms));
+    } else {
+        console.log("not sent");
+    }
 };
-
-// if (forms != []) {
-//     alert("Form Submitted");
-
-//     //Close Form
-//     if (document.querySelector('form').reset()) {
-//         var SUBMIT_SELECTED = document.getElementById('submit');
-//         SUBMIT_SELECTED.addEventListener('click', function() {
-//             BG_MODAL.forEach(function(BG_MODAL) {
-//                 BG_MODAL.style.display = 'none';
-//             });
-//         });
-//     }
-// }
-
 
 document.addEventListener('DOMContentLoaded', ()=>{
     document.getElementById('submit').addEventListener('click', addForm);
+    
+    var SUBMIT_SELECTED = document.getElementById('submit');
+    //Close Form
+    //if statement not working
+    //if (document.querySelector('form').reset() == true) {
+        SUBMIT_SELECTED.addEventListener('click', function() {
+            BG_MODAL.forEach(function(BG_MODAL) {
+                BG_MODAL.style.display = 'none';
+            });
+        });
+    //};
 });
 
