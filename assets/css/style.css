@@ -327,6 +327,12 @@ ul {
 @media (max-width: 1000px) and (orientation: portrait) {
     .navigation nav {
         padding: 0 20px;
+        background-color: #171717;
+        min-height: 60px;
+    }
+    .nav-text img {
+        width: 30px;
+        height: auto;
     }
     .content-page-header div {
         margin: 20px;
@@ -343,7 +349,39 @@ ul {
     }
     .bar {
         padding: 20px;
-        border: 20px solid #171717;
+        border-top: 2px solid #171717;
+    }
+    .bar-flex {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 700px) {
+    .navigation nav {
+        padding: 0 20px;
+        background-color: #171717;
+        min-height: 60px;
+    }
+    .nav-text img {
+        width: 30px;
+        height: auto;
+    }
+    .content-page-header div {
+        margin: 20px;
+    }
+    .description-section {
+        margin: 0;
+    }
+    .button-section button {
+        margin: 5px;
+        width: 210px;
+    }
+    .slideshow-section {
+        padding: 20px;
+    }
+    .bar {
+        padding: 20px;
+        border-top: 2px solid #171717;
     }
     .bar-flex {
         flex-direction: column;

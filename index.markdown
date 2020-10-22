@@ -80,6 +80,34 @@ description2: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel 
         }
     }
 
+     @media (max-width: 800px) {
+        .home-page-title {
+            padding: 20px 60px 20px 20px;
+            top: 50px;
+            left: 0;
+        }
+        .home-page-title h1 {
+                font-size: 40px;
+            }
+        .home-page-content {
+            padding: 20px;
+            bottom: 0;
+            right: 0;
+        }
+        .home-page-content img {
+            width: 90%;
+            height: auto;
+        }
+    }
+
+    @media (max-height: 400px) {
+        .home-page-content img {
+            width: 90%;
+            height: auto;
+            max-width: 150px;
+        }
+    }
+
     @media (max-width: 350px) {
         .home-page-title {
             padding: 20px;
@@ -88,6 +116,7 @@ description2: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel 
             font-size: 30px;
         }
     }
+}
     
 </style>
 
