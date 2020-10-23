@@ -31,14 +31,18 @@ description5: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel 
 
 <style>
     body {
+        background: #171717;
+    }
+
+    .background {
         background-image: url(/app-audits/assets/img/background.jpg);
         background-size: cover;
         background-position: center center;
         background-attachment: fixed;
+        padding-top: 100px;
     }
 
     .home-page-triangle {
-        margin-top: 100px;
         width: 0;
         height: 0;
         border-bottom: calc(100vh - 100px) solid white;
@@ -93,6 +97,9 @@ description5: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel 
     }
 
      @media (max-width: 800px) {
+        .background {
+            background-attachment: scroll;
+        }
         .home-page-title {
             padding: 20px 60px 20px 20px;
             top: 50px;
@@ -113,6 +120,9 @@ description5: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel 
     }
 
     @media (max-height: 400px) {
+        .background {
+            background-attachment: scroll;
+        }
         .home-page-content img {
             width: 90%;
             height: auto;
@@ -131,8 +141,9 @@ description5: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel 
 }
     
 </style>
-
-<section class="home-page-triangle"></section>
+<section class="background">
+    <section class="home-page-triangle"></section>
+</section>
 
 <section class="home-page-title">
     <h1>{{ page.title }}</h1>

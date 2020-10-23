@@ -399,6 +399,15 @@ ul {
     .bar-flex {
         flex-direction: column;
     }
+    .content-page-header {
+        background-attachment: scroll;
+    }
+}
+
+@media (max-height: 400px) {
+    .content-page-header {
+        background-attachment: scroll;
+    }
 }
 
 /* Standarised Font Styling */
