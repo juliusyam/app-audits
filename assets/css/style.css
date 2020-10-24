@@ -20,6 +20,10 @@ html, body {
     overflow-x: hidden;
 }
 
+body {
+
+}
+
 div, h2, h3, h4, h5, h6, a, nav, span, button, input, textarea {
     font-family: 'Montserrat', sans-serif;
 }
@@ -39,8 +43,7 @@ button:focus {
 }
 
 nav {
-    background: rgb(0,0,0);
-    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.3295693277310925) 39%, rgba(0,0,0,0.2679446778711485) 43%, rgba(0,0,0,0.19791666666666663) 48%, rgba(0,0,0,0.18110994397759106) 54%, rgba(0,0,0,0) 100%);
+    
 }
 
 .navigation nav {
