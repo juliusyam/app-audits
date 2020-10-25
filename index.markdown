@@ -2,7 +2,7 @@
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
-title: We audit any programmes of any size.
+title: We audit applications of any size.
 layout: default
 description: App Audits offer a range of 3rd cyber inspection, including check quality, due diligence and dispute resolution. 
         We provide professional reporting on softwares your firm has contracted to make, software companies you intend to take over, and more.
