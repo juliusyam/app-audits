@@ -1,265 +1,182 @@
+function validateInput(name, email, message) {
+    var success = false;
+    const emailRegex = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if (!emailRegex.test(email)) {
+        // do error message
+
+    } else if (name.length < 3) {
+        // do error message
+
+    } else if (message.length < 10) {
+        // do error message
+
+    } else {
+        success = true;
+    }
+
+    return success;
+}
+
+function sendData(data) {
+    // TODO: send data
+    localStorage.setItem('FormSubmission', JSON.stringify(data));
+}
+
+function wrapCheckbox(checkbox, label) {
+    const wrapper = document.createElement('div'); // Append Submit Button
+    wrapper.className = "container-div";
+
+    wrapper.appendChild(checkbox);
+    wrapper.appendChild(label);
+
+    return wrapper;
+}
+
+function createCheckbox(elementName, value) {
+    const checkbox = document.createElement('input'); //Lay of the Land Checkbox
+    let className = "checkboxElement" + elementName;
+    checkbox.className = className;
+    checkbox.setAttribute("id", className);
+    checkbox.setAttribute("type", "checkbox");
+    checkbox.setAttribute("name", "typeOfService");
+    checkbox.setAttribute("value", value);
+
+    const label = document.createElement('label');
+    label.className = "checkboxLabelLOTL";
+    label.innerHTML = value;
+
+    return wrapCheckbox(checkbox, label);
+}
+
+function prepareServices() {
+    const checkboxDiv = document.createElement('div');
+    checkboxDiv.className = "checkbox-div";
+
+    for (var i = 0; i < arguments.length; i++) {
+        var object = arguments[i]
+        checkboxDiv.appendChild(createCheckbox(object.shortName, object.longName));
+    }
+
+    return checkboxDiv;
+}
+
+
 //Form Pop Up
-var BG_MODAL = document.querySelectorAll('.bg-modal');
-var CLOSE_SELECTED = document.querySelectorAll('.close-selected');
-var BG_MODAL_SELECTED = document.querySelectorAll('.bg-modal-selected');
+const BG_MODAL = document.getElementById('contact_modal');
+const CLOSE_SELECTED = document.getElementById('close');
+const BG_MODAL_SELECTED = document.getElementsByClassName('bg-modal-selected');
 
-for (i = 0; i < CLOSE_SELECTED.length; i++) {
-    CLOSE_SELECTED[i].addEventListener('click', function() {
-        BG_MODAL.forEach(function(BG_MODAL) {
-            BG_MODAL.style.display = 'none';
-        });
-    });
-};
+CLOSE_SELECTED.addEventListener('click', function () {
+    BG_MODAL.style.display = 'none';
+});
 
-for (i = 0; i < BG_MODAL_SELECTED.length; i++) {
-    BG_MODAL_SELECTED[i].addEventListener('click', function() {
-        BG_MODAL.forEach(function(BG_MODAL) {
-            BG_MODAL.style.display = 'flex';
-        });
+for (var i = 0; i < BG_MODAL_SELECTED.length; i++) {
+    BG_MODAL_SELECTED[i].addEventListener('click', function () {
+        BG_MODAL.style.display = 'flex';
     });
-};
+}
 
 //Form Content
 
-var x = document.getElementById('contact_form');
-var createForm = document.createElement('form'); // Create New Element Form
+const formHolder = document.getElementById('contact_form');
+
+const createForm = document.createElement('form'); // Create New Element Form
 createForm.className = "form";
-createForm.setAttribute("action", "mailto:jyyam1999@gmail.com"); // Setting Action Attribute on Form
 createForm.setAttribute("method", "post"); // Setting Method Attribute on Form
 createForm.setAttribute("enctype", "text/plain");
 createForm.setAttribute("name", "submissionForm");
-x.appendChild(createForm);
 
-var heading = document.createElement('h2'); // Heading of Form
+const heading = document.createElement('h2'); // Heading of Form
 heading.innerHTML = "Contact Form ";
 createForm.appendChild(heading);
 
-var line = document.createElement('hr'); // Giving Horizontal Row After Heading
+const line = document.createElement('hr'); // Giving Horizontal Row After Heading
 createForm.appendChild(line);
 
-var lineBreak = document.createElement('br');
+const lineBreak = document.createElement('br');
 createForm.appendChild(lineBreak);
 
-// var nameLabel = document.createElement('label'); // Create Label for Name Field
-// nameLabel.innerHTML = "Your Name : "; // Set Field Labels
-// createForm.appendChild(nameLabel);
 
-var nameElement = document.createElement('input'); // Create Input Field for Name
+const nameElement = document.createElement('input'); // Create Input Field for Name
 nameElement.setAttribute("id", "name");
 nameElement.setAttribute("type", "text");
 nameElement.setAttribute("placeholder", "Name");
 nameElement.setAttribute("name", "name");
 createForm.appendChild(nameElement);
 
-var lineBreak = document.createElement('br');
 createForm.appendChild(lineBreak);
 
-// var emailLabel = document.createElement('label'); // Create Label for E-mail Field
-// emailLabel.innerHTML = "Your Email : ";
-// createForm.appendChild(emailLabel);
-
-var emailElement = document.createElement('input'); // Create Input Field for E-mail
+const emailElement = document.createElement('input'); // Create Input Field for E-mail
 emailElement.setAttribute("id", "email");
 emailElement.setAttribute("type", "text");
 emailElement.setAttribute("placeholder", "Email Address");
 emailElement.setAttribute("name", "email");
 createForm.appendChild(emailElement);
 
-var emailBreak = document.createElement('br');
-createForm.appendChild(emailBreak);
+createForm.appendChild(lineBreak);
 
-// var phoneLabel = document.createElement('label'); //Create Label for Phone Field
-// phoneLabel.innerHTML = "Your Phone Number : ";
-// createForm.appendChild(phoneLabel);
-
-var phoneElement = document.createElement('input');
+const phoneElement = document.createElement('input');
 phoneElement.setAttribute("id", "phone");
 phoneElement.setAttribute("type", "text");
 phoneElement.setAttribute("placeholder", "Phone");
 phoneElement.setAttribute("name", "phone");
 createForm.appendChild(phoneElement);
 
-var phoneBreak = document.createElement('br');
-createForm.appendChild(phoneBreak);
+createForm.appendChild(lineBreak);
 
-var checkboxLabel = document.createElement('h3'); //Create Label for Checkbox Field
+const checkboxLabel = document.createElement('h3'); //Create Label for Checkbox Field
 checkboxLabel.innerHTML = "Service(s) you would like to discuss: "
 createForm.appendChild(checkboxLabel);
 
-var checkboxElementLOTL = document.createElement('input'); //Lay of the Land Checkbox
-checkboxElementLOTL.className = "checkboxElementLOTL";
-checkboxElementLOTL.setAttribute("id", "checkboxElementLOTL");
-checkboxElementLOTL.setAttribute("type", "checkbox");
-checkboxElementLOTL.setAttribute("name", "typeOfService");
-checkboxElementLOTL.setAttribute("value", "Lay of the Land");
-createForm.appendChild(checkboxElementLOTL);
 
-var checkboxLabelLOTL = document.createElement('label');
-checkboxLabelLOTL.className = "checkboxLabelLOTL";
-checkboxLabelLOTL.innerHTML = "Lay of the Land";
-createForm.appendChild(checkboxLabelLOTL);
+createForm.appendChild(prepareServices(
+    {shortName: "LOTL", longName: "Lay of the Land"},
+    {shortName: "DD", longName: "Due Diligence"},
+    {shortName: "DR", longName: "Dispute Resolution"},
+));
 
-var checkboxElementAndLabelLOTL = document.querySelectorAll('.checkboxElementLOTL, .checkboxLabelLOTL');
+createForm.appendChild(lineBreak);
 
-// Array.prototype.forEach.call(document.querySelectorAll('.checkboxElementLOTL, .checkboxLabelLOTL'), function(c) {
-//     wrapper.appendChild(c);
-// })
-// createForm.appendChild(wrapper);
-
-var checkboxElementDD = document.createElement('input'); //Due Diligence Checkbox
-checkboxElementDD.className = "checkboxElementDD";
-checkboxElementDD.setAttribute("id", "checkboxElementDD");
-checkboxElementDD.setAttribute("type", "checkbox");
-checkboxElementDD.setAttribute("name", "typeOfService");
-checkboxElementDD.setAttribute("value", "Due Diligence");
-createForm.appendChild(checkboxElementDD);
-
-var checkboxLabelDD = document.createElement('label');
-checkboxLabelDD.className = "checkboxLabelDD";
-checkboxLabelDD.innerHTML = "Due Diligence";
-createForm.appendChild(checkboxLabelDD);
-
-var checkboxElementAndLabelDD = document.querySelectorAll('.checkboxElementDD, .checkboxLabelDD');
-
-// Array.prototype.forEach.call(document.querySelectorAll('.checkboxElementDD, .checkboxLabelDD'), function(c) {
-//     wrapper.appendChild(c);
-// })
-// createForm.appendChild(wrapper);
-
-var checkboxElementDR = document.createElement('input'); //Dispute Resolution Checkbox
-checkboxElementDR.className = "checkboxElementDR";
-checkboxElementDR.setAttribute("id", "checkboxElementDR");
-checkboxElementDR.setAttribute("type", "checkbox");
-checkboxElementDR.setAttribute("name", "typeOfService");
-checkboxElementDR.setAttribute("value", "Dispute Resolution");
-createForm.appendChild(checkboxElementDR);
-
-var checkboxLabelDR = document.createElement('label');
-checkboxLabelDR.className = "checkboxLabelDR";
-checkboxLabelDR.innerHTML = "Dispute Resolution";
-createForm.appendChild(checkboxLabelDR);
-
-var checkboxElementAndLabelDR = document.querySelectorAll('.checkboxElementDR, .checkboxLabelDR');
-
-var checkboxBreak = document.createElement('br');
-createForm.appendChild(checkboxBreak);
-
-// var messageLabel = document.createElement('label'); // Append Textarea
-// messageLabel.innerHTML = "Your Message : ";
-// createForm.appendChild(messageLabel);
-
-var textareaElement = document.createElement('textarea');
+const textareaElement = document.createElement('textarea');
 textareaElement.setAttribute("id", "message");
 textareaElement.setAttribute("placeholder", "Message");
 textareaElement.setAttribute("name", "message");
 createForm.appendChild(textareaElement);
 
-var messageBreak = document.createElement('br');
-createForm.appendChild(messageBreak);
+createForm.appendChild(lineBreak);
 
-var submitElement = document.createElement('input'); // Append Submit Button
+const submitElement = document.createElement('input'); // Append Submit Button
 submitElement.setAttribute("id", "submit");
-//submitElement.setAttribute("onclick", "getDateAndValue();return false");
 submitElement.setAttribute("type", "submit");
 submitElement.setAttribute("name", "submit");
 submitElement.setAttribute("value", "Submit");
 createForm.appendChild(submitElement);
 
-$(document).ready(function() {
-    $(checkboxElementAndLabelLOTL).wrapAll('<div class="container-div"></div>');
-    $(checkboxElementAndLabelDD).wrapAll('<div class="container-div"></div>');
-    $(checkboxElementAndLabelDR).wrapAll('<div class="container-div"></div>');
-    $('.container-div').wrapAll('<div class="checkbox-div"></div>');
-});
+submitElement.addEventListener('click', function (event) {
+    event.preventDefault();
 
-//get and set the Date and Value of checkBox
-var services = '';
-var date = '';
-var dateInNiceFormat = '';
-
-document.getElementById('submit').addEventListener('click', function() {
-    
-    services = Array.prototype.map.call(document.querySelectorAll("input[name=typeOfService]:checked"), function(each) {
-        return each.value; 
+    const services = Array.prototype.map.call(document.querySelectorAll("input[name=typeOfService]:checked"), function (each) {
+        return each.value;
     });
 
-    date = new Date();
-    dateInNiceFormat = date.toString();
-
-    console.log(services);
-    console.log(dateInNiceFormat);
-
-    validateNameAndEmail();
-})
-
-// function validateEmail(inputText) {
-//     //const re = /^([a-z\d\.-]+)@)([a-z\d-]+)\.([a-zA-Z]{2,8})(\.[a-z]{2,8})?$/;
-//     var emailFormat = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-//     if (inputText.value.match(emailFormat)) {
-//         alert("Valid email address");
-//         document.submissionForm.email.focus();
-//         return true;
-//     } else {
-//         alert("Invalid email address");
-//         document.submissionForm.email.focus();
-//         return false;
-//     }
-// };
-
-function validateNameAndEmail() {
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-
-    var strName = name;
-    var strEmail = email;
-
-    strName.prototype = function(each) {
-        return each.length;
-    };
-
-    const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    
-    console.log(emailRegex.test(strEmail));
-    console.log(strName.length);
-
-    if(emailRegex.test(strEmail) && strName.length >= 3) {
-        console.log("true true");
-        addForm(event);
-        alert("Form successfully submitted");
-
-        BG_MODAL.forEach(function(BG_MODAL) {
-            BG_MODAL.style.display = 'none';
+    const name = nameElement.value;
+    const email = emailElement.value;
+    const message = textareaElement.value;
+    const phone = phoneElement.value;
+    if (validateInput(name, email, message)) {
+        sendData({
+            date: new Date().toString(),
+            name: name,
+            email: email,
+            services: services,
+            message: message,
+            phone: phone,
         });
-        return;
-    } else {
-        console.log("die pig die");
-        alert("Please fill valid info");
-        document.querySelector('form').reset();
-        
-        BG_MODAL.forEach(function(BG_MODAL) {
-            BG_MODAL.style.display = 'flex';
-        });
-        return;
+        BG_MODAL.style.display = 'none';
+
+        createForm.reset();
     }
-};
+});
 
-//Form make JSON
-let forms = [];
-
-function addForm(event) {
-    event.preventDefault();
-    let form = {
-        date: dateInNiceFormat,
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        services: services,
-        message: document.getElementById('message').value
-    }
-    forms.push(form);
-    document.querySelector('form').reset();
-
-    localStorage.setItem('FormSubmission', JSON.stringify(forms));
-};
-
-
-
+formHolder.appendChild(createForm);

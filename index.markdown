@@ -35,7 +35,7 @@ description5: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel 
     }
 
     .background {
-        background-image: url(/app-audits/assets/img/background.jpg);
+        background-image: url(/assets/img/background.jpg);
         background-size: cover;
         background-position: center center;
         background-attachment: fixed;
@@ -138,8 +138,6 @@ description5: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel 
             font-size: 30px;
         }
     }
-}
-    
 </style>
 <section class="background">
     <section class="home-page-triangle"></section>
@@ -150,7 +148,7 @@ description5: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel 
 </section>
 
 <section class="home-page-content">
-    <img src="/app-audits/assets/img/logo-white.png">
+    <img src="/assets/img/logo-white.png">
     <p>App Audits offer a range of 3rd cyber inspection, including check quality, due diligence and dispute resolution.</p>
 </section>
 

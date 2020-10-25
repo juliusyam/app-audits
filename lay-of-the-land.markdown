@@ -24,7 +24,7 @@ description4: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel 
 ---
 
 <style>
-        .content-page-header {background-image: url(/app-audits/assets/img/lay-of-the-land-header.jpg);}
+        .content-page-header {background-image: url(/assets/img/lay-of-the-land-header.jpg);}
 </style>
 
 {% include header.html %} 

@@ -23,7 +23,7 @@ description4: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel 
 
 ---
 <style>
-        .content-page-header {background-image: url(/app-audits/assets/img/dispute-resolution-header.jpg);}
+        .content-page-header {background-image: url(/assets/img/dispute-resolution-header.jpg);}
 </style>
 
 {% include header.html %} 

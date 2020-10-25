@@ -8,7 +8,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" text="text/css" href="{{ site.baseurl }}/assets/css/style.css">
     <link rel="shortcut icon" type="image/png" href="{{ site.baseurl }}/assets/img/favicon.png">
-    <script src="{{ site.baseurl }}/assets/js/jquery-3.5.1.js"></script>
     <script src="https://kit.fontawesome.com/46026483b6.js" crossorigin="anonymous"></script>
 </head>
 <style>
@@ -29,7 +28,7 @@
                 <li><a class="link" href="{{ site.baseurl }}/dispute-resolution/">Dispute Resolution</a></li>
                 <li><a class="link bg-modal-selected">Contact</a></li>
             </ul>
-            <div class="burger">
+            <div id="burger">
                 <div class="line1"></div>
                 <div class="line2"></div>
                 <div class="line3"></div>
@@ -39,9 +38,9 @@
 
     {{ content }}
 
-    <section class="bg-modal">
+    <section id="contact_modal" class="bg-modal">
         <div id="contact_form">
-            <div class="close close-selected">+</div>
+            <div id="close">+</div>
         </div>
     </section>
   
