@@ -43,18 +43,13 @@ button:focus {
 }
 
 nav {
-    background: rgb(0,0,0);
-    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6250875350140056) 25%, rgba(0,0,0,0.4542191876750701) 50%, rgba(0,0,0,0.09567577030812324) 95%, rgba(0,0,0,0) 100%);
-}
-
-.navigation nav {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     position: sticky;
     transition: 0.5s ease all;
-    background-color: none;
     padding: 40px 100px;
 }
 
