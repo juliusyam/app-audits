@@ -107,7 +107,7 @@ description5: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel 
         }
         .home-page-title h1 {
                 font-size: 40px;
-            }
+        }
         .home-page-content {
             padding: 20px;
             bottom: 0;
@@ -119,9 +119,12 @@ description5: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel 
         }
     }
 
-    @media (max-height: 400px) {
+    @media (max-height: 500px) {
         .background {
             background-attachment: scroll;
+        }
+        .home-page-title h1 {
+                font-size: 30px;
         }
         .home-page-content img {
             width: 90%;
@@ -133,9 +136,10 @@ description5: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel 
     @media (max-width: 350px) {
         .home-page-title {
             padding: 20px;
+            max-width: 70vw;
         }
         .home-page-title h1 {
-            font-size: 30px;
+            font-size: 25px;
         }
     }
 </style>
@@ -148,7 +152,7 @@ description5: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel 
 </section>
 
 <section class="home-page-content">
-    <img src="/assets/img/logo-white.png">
+    <img src="{{ site.baseurl }}/assets/img/logo-white.png">
     <p>App Audits offer a range of 3rd cyber inspection, including check quality, due diligence and dispute resolution.</p>
 </section>
 
