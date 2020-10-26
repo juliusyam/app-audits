@@ -80,7 +80,7 @@ description5: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel 
         margin-inline-start: 2em;
     }
 
-    @media (max-width: 1000px) and (orientation: portrait) {
+    @media (max-width: 1050px) and (orientation: portrait) {
         .home-page-title {
             padding: 20px 60px 20px 20px;
             top: 50px;
