@@ -76,6 +76,10 @@ description5: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel 
         height: auto;
     }
 
+    .home-page-content p {
+        margin-inline-start: 2em;
+    }
+
     @media (max-width: 1000px) and (orientation: portrait) {
         .home-page-title {
             padding: 20px 60px 20px 20px;
@@ -112,6 +116,7 @@ description5: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel 
             padding: 20px;
             bottom: 0;
             right: 0;
+            max-width: 400px;
         }
         .home-page-content img {
             width: 90%;
@@ -125,6 +130,9 @@ description5: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel 
         }
         .home-page-title h1 {
                 font-size: 30px;
+        }
+        .home-page-content {
+            max-width: 400px;
         }
         .home-page-content img {
             width: 90%;
