@@ -197,7 +197,7 @@ ul {
     }
 }
 
-@media (max-height: 500px) {
+@media (max-width: 1200px) and (max-height: 500px) {
     .nav_links {
         overflow-y: scroll;
         height: 100%;
