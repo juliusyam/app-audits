@@ -72,7 +72,7 @@ nav {
 }
 
 
-.nav-text-and-nav_links_language {
+.nav_image {
     display: flex;
     justify-content: space-between;
 }
@@ -174,7 +174,8 @@ ul {
         transition: transform 0.5s ease-in;
         padding: 0 20px;
         width: 200px;
-        overflow-y: scroll;
+        overflow-x: hidden;
+        overflow-y: hidden;
     }
 
     nav li {
@@ -193,6 +194,14 @@ ul {
         display: block;
         cursor: pointer;
         z-index: 1000;
+    }
+}
+
+@media (max-height: 500px) {
+    .nav_links {
+        overflow-y: scroll;
+        height: 100%;
+        padding: 250px 20px;
     }
 }
 
