@@ -9,23 +9,23 @@ description: App Audits offer a range of 3rd cyber inspection, including check q
 
 # Bar 1
 title1: Service
-description1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel justo sodales, posuere arcu porttitor, scelerisque leo. Suspendisse libero ipsum, luctus lacinia metus sit amet, semper maximus purus. Nullam rutrum tempor massa, sit amet euismod dui pellentesque et. Donec vitae finibus metus. Suspendisse auctor tortor est, et elementum arcu pulvinar tincidunt. Etiam varius eget lacus ut finibus. Fusce enim enim, tempus at eleifend vitae, varius a mauris. Mauris eu purus a ex sagittis imperdiet et sit amet est.
+description1: We offer an independent report based on your software application.
 
 # Bar 2
 title2: About Us
-description2: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel justo sodales, posuere arcu porttitor, scelerisque leo. Suspendisse libero ipsum, luctus lacinia metus sit amet, semper maximus purus. Nullam rutrum tempor massa, sit amet euismod dui pellentesque et. Donec vitae finibus metus. Suspendisse auctor tortor est, et elementum arcu pulvinar tincidunt. Etiam varius eget lacus ut finibus. Fusce enim enim, tempus at eleifend vitae, varius a mauris. Mauris eu purus a ex sagittis imperdiet et sit amet est.
+description2: Might remove this.
 
-# Bar 2
-title3: Lay of the Land
-description3: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel justo sodales, posuere arcu porttitor, scelerisque leo. Suspendisse libero ipsum, luctus lacinia metus sit amet, semper maximus purus. Nullam rutrum tempor massa, sit amet euismod dui pellentesque et. Donec vitae finibus metus. Suspendisse auctor tortor est, et elementum arcu pulvinar tincidunt. Etiam varius eget lacus ut finibus. Fusce enim enim, tempus at eleifend vitae, varius a mauris. Mauris eu purus a ex sagittis imperdiet et sit amet est.
+# Bar 3
+title3: Dispute Resolution
+description3: An independent report to assist in resolution of disputes when trying to mediate prior to litigation. Have our team inspect the issues or perceived issues in the a disputed product or service and do more business to avoid costly legal battles.
 
-# Bar 2
+# Bar 4
 title4: Due Diligence
-description4: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel justo sodales, posuere arcu porttitor, scelerisque leo. Suspendisse libero ipsum, luctus lacinia metus sit amet, semper maximus purus. Nullam rutrum tempor massa, sit amet euismod dui pellentesque et. Donec vitae finibus metus. Suspendisse auctor tortor est, et elementum arcu pulvinar tincidunt. Etiam varius eget lacus ut finibus. Fusce enim enim, tempus at eleifend vitae, varius a mauris. Mauris eu purus a ex sagittis imperdiet et sit amet est.
+description4: A detailed report of software state and processes based on the context of where the existing products are and where the idea is to take the business.
 
-# Bar 2
-title5: Dispute Resolution
-description5: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel justo sodales, posuere arcu porttitor, scelerisque leo. Suspendisse libero ipsum, luctus lacinia metus sit amet, semper maximus purus. Nullam rutrum tempor massa, sit amet euismod dui pellentesque et. Donec vitae finibus metus. Suspendisse auctor tortor est, et elementum arcu pulvinar tincidunt. Etiam varius eget lacus ut finibus. Fusce enim enim, tempus at eleifend vitae, varius a mauris. Mauris eu purus a ex sagittis imperdiet et sit amet est.
+# Bar 5
+title5: Lay of the Land
+description5: A review of your existing products, perfect for a new CTO or CEO when taking over an existing organisation who wants to understand more about the current state of strengths and weaknesses.
 
 ---
 
