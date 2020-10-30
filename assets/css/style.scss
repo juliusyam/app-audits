@@ -164,7 +164,12 @@ ul {
     transition: transform 0.5s ease-in;
     padding: 0 20px;
     width: 200px;
+    overflow: hidden;
+  }
+  @media (max-height: 500px) {
     overflow-y: scroll;
+    height: 100%;
+    padding: 250px 20px;
   }
 }
 
