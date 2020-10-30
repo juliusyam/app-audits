@@ -39,10 +39,18 @@ h1 {
   font-family: 'Montserrat-Bold', sans-serif;
 }
 
+div, h2, h3, h4, h5, h6, a, nav, span, button, input, textarea {
+  font-family: 'Montserrat', sans-serif;
+}
+
 a {
   transition-delay: 1000ms;
   cursor: pointer;
   text-decoration: none;
+}
+
+button:focus {
+  outline: none;
 }
 
 nav {
