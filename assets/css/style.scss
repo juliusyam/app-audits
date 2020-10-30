@@ -707,7 +707,7 @@ input[type="submit"] {
       height: auto;
     }
 
-    @media ((max-width: 1050px) and portrait) {
+    @media (max-width: 1050px) and (orientation: portrait) {
       width: 90%;
       height: auto;
     }

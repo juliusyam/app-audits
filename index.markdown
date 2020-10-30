@@ -28,6 +28,7 @@ title5: Dispute Resolution
 description5: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel justo sodales, posuere arcu porttitor, scelerisque leo. Suspendisse libero ipsum, luctus lacinia metus sit amet, semper maximus purus. Nullam rutrum tempor massa, sit amet euismod dui pellentesque et. Donec vitae finibus metus. Suspendisse auctor tortor est, et elementum arcu pulvinar tincidunt. Etiam varius eget lacus ut finibus. Fusce enim enim, tempus at eleifend vitae, varius a mauris. Mauris eu purus a ex sagittis imperdiet et sit amet est.
 
 ---
+<link rel="stylesheet" text="text/css" href="{{ site.baseurl }}/assets/css/homepage.css">
 
 <section class="background">
     <section class="home-page-triangle"></section>
