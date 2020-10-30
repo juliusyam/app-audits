@@ -93,11 +93,6 @@ nav {
   }
 }
 
-.nav-text-and-nav_links_language {
-  display: flex;
-  justify-content: space-between;
-}
-
 nav li, nav li a {
   color: white;
   text-align: center;
@@ -149,7 +144,7 @@ ul {
   list-style: none;
 }
 
-#nav_links {
+.nav_links {
   list-style: none;
   display: flex;
   justify-content: flex-end;
@@ -173,7 +168,7 @@ ul {
   }
 }
 
-#nav_links, li, a, a:hover {
+.nav_links, li, a, a:hover {
   transition: all 0.3s ease 0s;
 }
 
@@ -255,19 +250,31 @@ ul {
   }
 }
 
-.toggle {
-  .line1 {
-    transform: rotate(45deg) translate(5px, 6px);
-  }
-
-  .line2 {
-    opacity: 0;
-  }
-
-  .line3 {
-    transform: rotate(-45deg) translate(5px, -6px);
-  }
+.toggle .line1 {
+  transform: rotate(45deg) translate(5px, 6px);
 }
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+// .toggle {
+//   .line1 {
+//     transform: rotate(45deg) translate(5px, 6px);
+//   }
+
+//   .line2 {
+//     opacity: 0;
+//   }
+
+//   .line3 {
+//     transform: rotate(-45deg) translate(5px, -6px);
+//   }
+// }
 
 /* Styling for All Pages */
 .content-page-header {

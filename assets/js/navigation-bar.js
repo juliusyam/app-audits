@@ -1,6 +1,6 @@
 const burger = document.getElementById('burger');
-const nav = document.getElementById('nav_links');
-const topButton = document.querySelectorAll('#nav_links li');
+const nav = document.querySelector('.nav_links');
+const topButton = document.querySelectorAll('.nav_links li');
 
 burger.addEventListener('click', function() {
     //Toggle Nav
@@ -10,7 +10,7 @@ burger.addEventListener('click', function() {
         if (link.style.animation) {
             link.style.animation = '';
         } else {
-            link.style.animation = "navLinkFade 0.5s ease forwards " + (index / 7 + 0.5) + "s";
+            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
         }
     });
     //Burger Animation
