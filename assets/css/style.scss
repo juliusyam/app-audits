@@ -77,6 +77,43 @@ nav {
     min-height: 60px;
   }
 
+  ul {
+    margin-block-start: 5px;
+    margin-block-end: 5px;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+    list-style: none;
+    
+    li {
+      @media (max-width: 1200px) {
+        letter-spacing: 5px;
+        text-align: center;
+        margin: 20px 0;
+      }
+    
+      a {
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 16px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin: 0 20px;
+    
+        .scroll {
+          font-size: 12px;
+          letter-spacing: 1.5px;
+        }
+    
+        @media (max-width: 1200px) {
+          font-size: 20px;
+          font-weight: 900;
+          margin: 0;
+        }
+      }
+    }
+  }
 }
 
 .navigation {
@@ -101,40 +138,6 @@ nav {
   }
 }
 
-nav li, nav li a {
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 16px;
-  margin: 0;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-nav li {
-  @media (max-width: 1200px) {
-    letter-spacing: 5px;
-    text-align: center;
-    margin: 20px 0;
-  }
-
-  a {
-    margin: 0 20px;
-
-    .scroll {
-      font-size: 12px;
-      letter-spacing: 1.5px;
-    }
-
-    @media (max-width: 1200px) {
-      font-size: 20px;
-      font-weight: 900;
-      margin: 0;
-    }
-  }
-}
-
 button {
   cursor: pointer;
   outline: none;
@@ -142,14 +145,6 @@ button {
   &:focus {
     outline: none;
   }
-}
-
-ul {
-  margin-block-start: 5px;
-  margin-block-end: 5px;
-  padding-inline-start: 0;
-  padding-inline-end: 0;
-  list-style: none;
 }
 
 .nav_links {
@@ -402,6 +397,10 @@ ul {
 
   &:nth-child(even) {
     background: white;    
+  }
+
+  ul {
+    text-align: justify;
   }
 }
 
