@@ -6,17 +6,51 @@ permalink: /due-diligence/
 
 # Bar 1
 title1: Service
-description1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel justo sodales, posuere arcu porttitor, scelerisque leo. Suspendisse libero ipsum, luctus lacinia metus sit amet, semper maximus purus. Nullam rutrum tempor massa, sit amet euismod dui pellentesque et. Donec vitae finibus metus. Suspendisse auctor tortor est, et elementum arcu pulvinar tincidunt. Etiam varius eget lacus ut finibus. Fusce enim enim, tempus at eleifend vitae, varius a mauris. Mauris eu purus a ex sagittis imperdiet et sit amet est.
+description1: 
+        We perform a confidential, independent review of the code, designs, documentation and usability of your concept or your potential purchase. We then prepare a document broken down into in both layman's and technician's terms to describe the system that exists couched in the end goal you are oping to achieve by engaging with the business or IP looking to engage with.
+
+        Give a report to both parties outlining some stuff
+
+        The benefit of engaging an independent third-party is that it allows 
+
+
 
 # Bar 2
 title2: What You Will Get
 description2: 
-        A reports <br />
-        doing stuff
+        Both parties will recieve a report outlining the current architecture and the state of the existing codebase.
 
-# Bar 4
-title4: Contact Us
-description4: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel justo sodales, posuere arcu porttitor, scelerisque leo. Suspendisse libero ipsum, luctus lacinia metus sit amet, semper maximus purus. Nullam rutrum tempor massa, sit amet euismod dui pellentesque et. Donec vitae finibus metus. Suspendisse auctor tortor est, et elementum arcu pulvinar tincidunt. Etiam varius eget lacus ut finibus. Fusce enim enim, tempus at eleifend vitae, varius a mauris. Mauris eu purus a ex sagittis imperdiet et sit amet est.
+        We can potentially also review the skills of the existing staff and give any recomendations of recruitment drives required.
+
+        Our review will cover;
+        <ul>
+        <li>Application architecture</li>
+        <li>Code documentation</li>
+        <li>Application documentation</li>
+        <li>Code "smells"</li>
+        <li>Unit Test Coverage</li>
+        <li>Testing, Bug Reporting, Triaging, and Fixing Pipeline</li>
+        <li>Existing Logical Bugs</li>
+        <li>Existing Syntactical Bugs</li>
+        <li>Build Pipelines and Procuedures</li>
+        <li>Time-to-market for New Changes and Features</li>
+        <li>Source Control Procedures</li>
+        <li>User Interface Investigation</li>
+        <li>User Experience (UX)</li>
+        <li>Decision Making Procesess</li>
+        <li>Collection of Analytics</li>
+        <li>Security</li>
+        <li>Application Performance</li>
+        <li>Database Design</li>
+        <li>Database Schema and Documentation</li>
+        <li>Schema-less Data Structure</li>
+        </ul>
+        
+        
+
+# Bar 3
+title3: Contact Us
+description3: Book a call with one of the team today to discuss your Due Dilligence requirements and how we can help you make an informed decision on your investments.
 
 ---
 
