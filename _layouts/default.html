@@ -16,7 +16,7 @@
 <body>
     <section class="navigation">
         <nav>
-            <div class="nav-text-and-nav_links_language">
+            <div class="nav_image">
                 <a class="nav-text" href="{{ site.baseurl }}/">
                     <img src="{{ site.baseurl }}/assets/img/logo-frame.png">
                 </a>
@@ -62,25 +62,6 @@
         </p>
         <p>York Dev Studio, 20 St. Saviourgate, York, North Yorkshire, YO1 8NN</p>
     </section>
-  
-    <script>
-
-        window.onscroll = () => {
-            const nav = document.querySelectorAll('.navigation nav');
-            const navImg = document.querySelectorAll('.nav-text img');
-
-            for (i = 0; i < nav.length; i++) {
-                if (this.scrollY <= 100) {
-                    nav[i].className = '';
-                    navImg[i].className = '';
-                } else {
-                    nav[i].className = 'scroll';
-                    navImg[i].className = 'scroll';
-                }
-            };
-        };
-
-    </script>
     <script src="{{ site.baseurl }}/assets/js/form.js"></script>
     <script src="{{ site.baseurl }}/assets/js/navigation-bar.js"></script>
 </body>

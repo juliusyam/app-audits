@@ -6,7 +6,7 @@ burger.addEventListener('click', function() {
     //Toggle Nav
     nav.classList.toggle('nav_active');
     //Animate top-button
-    topButton.forEach((link, index) => {
+    topButton.forEach(function(link, index) {
         if (link.style.animation) {
             link.style.animation = '';
         } else {
@@ -16,3 +16,17 @@ burger.addEventListener('click', function() {
     //Burger Animation
     burger.classList.toggle('toggle');
 });
+
+
+window.onscroll = () => {
+    const nav = document.querySelectorAll('.navigation nav, .nav-text img');
+
+    for (i = 0; i < nav.length; i++) {
+        if (this.scrollY <= 100) {
+            nav[i].className = '';
+        } else {
+            nav[i].className = 'scroll';
+        }
+    }
+};
+
