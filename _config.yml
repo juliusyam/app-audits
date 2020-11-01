@@ -21,7 +21,7 @@
 title: App Audits
 description: >- # this means to ignore newlines until "baseurl:"
   We Audit Any Application of Any Size.
-permalink: /:categories
+permalink: /:pages
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "//appaudits.co.uk" # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -29,6 +29,9 @@ url: "//appaudits.co.uk" # the base hostname & protocol for your site, e.g. http
 theme: minima
 plugins:
   - jekyll-feed
+source: 
+include:
+  ['_pages']
 
 # Exclude from processing.
 # The following items will not be processed, by default.
