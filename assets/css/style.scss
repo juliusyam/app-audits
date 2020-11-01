@@ -395,14 +395,14 @@ ul {
     padding: 20px;
     border-top: 2px solid $darkBackground;
   }
-}
 
-.bar-style-1 {
-  background: white;
-}
+  &:nth-child(odd) {
+    background: #fbfbfb;
+  }
 
-.bar-style-2 {
-  background: #fbfbfb;
+  &:nth-child(even) {
+    background: white;    
+  }
 }
 
 .bar-flex {
