@@ -9,12 +9,12 @@ description: App Audits offer a range of 3rd cyber inspection, including check q
 
 services:
     - title: Dispute Resolution
-      description: An independent report to assist in resolution of disputes when trying to mediate prior to litigation. Have our team inspect the issues or perceived issues in the a disputed product or service and do more business to avoid costly legal battles.
+      description: An independent report to assist in resolution of disputes when trying to mediate prior to litigation. Have our team inspect the issues or perceived issues in the a disputed product or service and do more business before needing to resort to litigation.
       link: dispute-resolution
       image: dispute-resolution-header.jpg
 
     - title: Due Diligence
-      description: A detailed report of software state and processes based on the context of where the existing products are and where the idea is to take the business.
+      description: A detailed report of software state and processes based on the context of where the existing applications are and how well they align to the plans of the potential new owner or investor.
       link: due-diligence
       image: due-diligence-header.jpg
 

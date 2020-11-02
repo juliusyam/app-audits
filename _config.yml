@@ -31,7 +31,7 @@ plugins:
   - jekyll-feed
 source: 
 include:
-  ['_pages']
+  ['_pages', '.htaccess']
 
 # Exclude from processing.
 # The following items will not be processed, by default.
