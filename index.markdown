@@ -7,10 +7,7 @@ layout: default
 description: App Audits offer a range of 3rd cyber inspection, including check quality, due diligence and dispute resolution. 
         We provide professional reporting on softwares your firm has contracted to make, software companies you intend to take over, and more.
 
-service: Service
-service_description: We offer an independent report based on your software application.
-
-options:
+services:
     - title: Dispute Resolution
       description: An independent report to assist in resolution of disputes when trying to mediate prior to litigation. Have our team inspect the issues or perceived issues in the a disputed product or service and do more business to avoid costly legal battles.
       link: dispute-resolution
@@ -47,13 +44,13 @@ about_us_description: Experts in Software Development and working with clients t
 
 <section class="bar">
     <section class="description-section">
-        <h2>{{ page.service }}</h2>
-        <p>{{ page.service_description }}</p>
+        <h2>Service</h2>
+        <p>We offer an intependent audit of your software applications and provide a report suitable for either layman or technical readers to establish the current  based on your software application.</p>
     </section>
 </section>
 
-{% for option in page.options %}
-    {% include button.html link=option.link image=option.image title=option.title description=option.description %}
+{% for service in page.services %}
+    {% include button.html link=service.link image=service.image title=service.title description=service.description %}
 {% endfor %}
 
 <section class="bar">
