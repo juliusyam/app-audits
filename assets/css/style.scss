@@ -457,7 +457,8 @@ button {
 }
 
 .description-section {
-  margin: 50px;
+  margin: auto;
+  max-width: 1400px;
 
   h1, h2, p, a {
     color: $darkBackground;
