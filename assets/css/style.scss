@@ -780,8 +780,7 @@ input[type="submit"] {
 }
 
 .list-style {
-  // position: relative;
-  // column-count: 3;
+  column-count: 2;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -807,9 +806,9 @@ input[type="submit"] {
     flex-direction: row;
     margin: 20px;
     width: 400px;
-    height: 75px;
+    height: 50px;
     overflow: hidden;
-    box-shadow: 0px 5px 5px #c4b9b5;
+    border: solid 1px black;
 
     @media (max-width: 500px) {
       width: 300px;
@@ -826,10 +825,13 @@ input[type="submit"] {
         font-size: 20px;
         color: white;
       }
+
       &:nth-child(2) {
-        padding: 10px 5px;
+        text-align: left;
+        margin-left: 3px;
+        margin-top: auto;
+        margin-bottom: auto;
       }
     }
   }
-  
 }

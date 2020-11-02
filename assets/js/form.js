@@ -19,8 +19,17 @@ function validateInput(name, email, message) {
 }
 
 function sendData(data) {
-    // TODO: send data
-    localStorage.setItem('FormSubmission', JSON.stringify(data));
+  var xmlhttp;
+  if (window.XMLHttpRequest) {
+    xmlhttp = new XMLHttpRequest();
+  } else {
+    // code for older browsers
+    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.open("POST", "https://v690on6ahk.execute-api.eu-west-2.amazonaws.com/default/email-forwarding", true);
+  xmlhttp.setRequestHeader("x-api-key", "I06EVXWxBzakbN77ajkBh7pCwuwW9SxL5F9STAW7");
+  xmlhttp.setRequestHeader("Content-Type", "application/json");
+  xmlhttp.send(JSON.stringify(data));
 }
 
 function wrapCheckbox(checkbox, label) {
