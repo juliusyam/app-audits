@@ -1,0 +1,47 @@
+---
+---
+.highlight {
+    background: #1e1e1e;
+    border: 1px #C1C1C1;
+    border-radius: 10px;
+    padding: 20px;
+}
+code {
+    border-radius: 3px;
+    padding: 2px;
+}
+pre, pre.prettyprint {
+    background: #1e1e1e;
+}
+pre span {
+    font-family: monospace;
+    margin: 2px 0;
+}
+
+.language-java {
+
+    .lineno {
+        color: #a9b7c6;
+    }
+    .kn, .kd, .kt, .k, .kc {
+        color: #cc7832;
+    }
+    .nn, .nc, .o, .na {
+        color: #a9b7c6;
+    }
+    .n {
+        color: #9876aa;
+    }
+    .nd {
+        color: #bbb529;
+    }
+    .nf {
+        color: #ffc66d;
+    }
+    .s, .c1 {
+        color: #5f864a;
+    }
+    .mi {
+        color: #5c968e;
+    }
+}
