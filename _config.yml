@@ -27,8 +27,6 @@ url: "//appaudits.co.uk" # the base hostname & protocol for your site, e.g. http
 
 # Build settings
 theme: minima
-plugins:
-  - jekyll-feed
 source: 
 include:
   ['_pages', '.htaccess']
@@ -55,3 +53,4 @@ exclude:
   - run.sh
   - .gitignore
   - .idea/
+  - README.md
